@@ -7,6 +7,12 @@ install! 'cocoapods', :deterministic_uuids => false
 target 'ImagePickerRN' do
   config = use_native_modules!
 
+  permissions_path = '../node_modules/react-native-permissions/ios'
+  
+  pod 'Permission-Camera', :path => "#{permissions_path}/Camera"
+  pod 'Permission-PhotoLibrary', :path => "#{permissions_path}/PhotoLibrary"
+  pod 'Permission-MediaLibrary', :path => "#{permissions_path}/MediaLibrary"
+
   # Flags change depending on the env values.
   flags = get_default_flags()
 
@@ -31,13 +37,15 @@ target 'ImagePickerRN' do
     # Pods for testing
   end
 
+  
   post_install do |installer|
     react_native_post_install(
       installer,
       # Set `mac_catalyst_enabled` to `true` in order to apply patches
       # necessary for Mac Catalyst builds
       :mac_catalyst_enabled => false
-    )
-    __apply_Xcode_12_5_M1_post_install_workaround(installer)
-  end
+      )
+      __apply_Xcode_12_5_M1_post_install_workaround(installer)
+    end
+  
 end
