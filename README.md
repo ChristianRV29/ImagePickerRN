@@ -21,4 +21,4 @@ Once you just cloned it, you must execute `npm i` or `yarn` for installing all r
 
 If you want to execute it in iOS you must execute `cd iOS && pod install`
 
-Then all depencies were installed proceed to execute it with `yarn start` and `yarn android/ios` or with `npm react-native run-android/ios`
+Then all dependencies were installed proceed to execute it with `yarn start` and `yarn android/ios` or with `npm react-native run-android/ios`
