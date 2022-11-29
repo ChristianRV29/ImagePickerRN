@@ -1,10 +1,12 @@
 import React from 'react';
-import { Text, View } from 'react-native';
+
+import { PermissionsProvider } from './src/context/PermissionsContext';
+import { Home } from './src/screens/Home';
 
 export const App = () => {
   return (
-    <View>
-      <Text>Welcome to ImagePickerRN</Text>
-    </View>
+    <PermissionsProvider>
+      <Home />
+    </PermissionsProvider>
   );
 };
